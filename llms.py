@@ -13,7 +13,7 @@ st.caption("Includes: Chatbot, Classification, JSON Extraction, Email Response, 
 # -----------------------------
 # API Key check
 # -----------------------------
-api_key = os.getenv("MISTRAL_API_KEY")
+api_key = os.getenv("MISTRAL_API_KEY") or st.secrets.get("MISTRAL_API_KEY")
 if not api_key:
     st.error(
         "MISTRAL_API_KEY is not set.\n\n"
